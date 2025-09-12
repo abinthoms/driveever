@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopGear News - DriveEver | Latest Driving & Automotive Updates</title>
+    <meta name="description" content="Stay updated with the latest driving news, car reviews, industry updates, and everything automotive from DriveEver's TopGear News section.">
+    <meta name="keywords" content="driving news, car reviews, automotive news, driving test updates, DVSA news">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .news-card { transition: all 0.3s ease; }
+        .news-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .category-filter { transition: all 0.2s ease; }
+        .category-filter:hover { background-color: #3b82f6; color: white; }
+        .category-filter.active { background-color: #3b82f6; color: white; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-gray-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mr-2">
+                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9L2 12v9a2 2 0 0 0 2 2h10.7a2 2 0 0 0 1.9-1.4L18 19.3a2 2 0 0 0-1-2.3zM7 16H5v-2h2v2zm4 0H9v-2h2v2zm4 0h-2v-2h2v2z"></path>
+                </svg>
+                DriveEver
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="/#features" class="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
+                <a href="/news/" class="text-blue-600 font-semibold">TopGear News</a>
+                <a href="/vehicle-check/" class="text-gray-600 hover:text-blue-600 transition-colors">Vehicle Check</a>
+                <a href="/about/" class="text-gray-600 hover:text-blue-600 transition-colors">About Us</a>
+                <a href="/pricing/" class="text-gray-600 hover:text-blue-600 transition-colors">Pricing</a>
+                <a href="/contact/" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Login</a>
+                <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-300">Register</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2">
+                <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="/#features" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Features</a>
+            <a href="/news/" class="block text-blue-600 font-semibold py-2">TopGear News</a>
+            <a href="/vehicle-check/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Vehicle Check</a>
+            <a href="/about/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">About Us</a>
+            <a href="/pricing/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Pricing</a>
+            <a href="/contact/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Contact</a>
+            <hr class="my-2">
+            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Login</a>
+            <a href="#" class="block bg-blue-600 text-white text-center px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-300">Register</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">TopGear News</h1>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto">Stay updated with the latest driving news, car reviews, industry updates, and everything automotive</p>
+            </div>
+        </section>
+
+        <!-- Category Filters -->
+        <section class="py-8 bg-white border-b">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button class="category-filter active px-6 py-2 rounded-full border border-gray-300 text-gray-700 font-medium" data-category="all">
+                        All News
+                    </button>
+                    <button class="category-filter px-6 py-2 rounded-full border border-gray-300 text-gray-700 font-medium" data-category="driving-test">
+                        Driving Test
+                    </button>
+                    <button class="category-filter px-6 py-2 rounded-full border border-gray-300 text-gray-700 font-medium" data-category="dvsa">
+                        DVSA
+                    </button>
+                    <button class="category-filter px-6 py-2 rounded-full border border-gray-300 text-gray-700 font-medium" data-category="electric-vehicle">
+                        Electric Vehicles
+                    </button>
+                    <button class="category-filter px-6 py-2 rounded-full border border-gray-300 text-gray-700 font-medium" data-category="car-review">
+                        Car Reviews
+                    </button>
+                    <button class="category-filter px-6 py-2 rounded-full border border-gray-300 text-gray-700 font-medium" data-category="highway-code">
+                        Highway Code
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Grid -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div id="news-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Loading Placeholder -->
+                    <div class="col-span-full text-center">
+                        <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-6"></div>
+                        <p class="text-xl text-gray-600">Loading latest news...</p>
+                        <p class="text-gray-500 mt-2">Fetching the most recent automotive updates</p>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-12">
+                    <button id="load-more-btn" class="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-all duration-300 text-lg font-medium hidden">
+                        Load More News
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="bg-gray-100 py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Updated</h2>
+                <p class="text-gray-600 mb-8 max-w-xl mx-auto">Get the latest driving news and updates delivered to your inbox every week.</p>
+                <div class="max-w-md mx-auto">
+                    <div class="flex">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button class="bg-blue-600 text-white px-6 py-3 rounded-r-md hover:bg-blue-700 transition-all duration-300">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">DriveEver</h3>
+                    <p class="text-gray-400">Your lifelong driving companion, making the road simpler and safer for everyone.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="/news/" class="text-blue-400 font-medium">TopGear News</a></li>
+                        <li><a href="/vehicle-check/" class="text-gray-400 hover:text-white transition-colors">Vehicle Check</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Become an Instructor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 DriveEver Ltd. All rights reserved. Built in Lincoln, UK.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Category Filter Functionality
+        const categoryFilters = document.querySelectorAll('.category-filter');
+        categoryFilters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                // Remove active class from all filters
+                categoryFilters.forEach(f => f.classList.remove('active'));
+                // Add active class to clicked filter
+                filter.classList.add('active');
+                
+                const category = filter.dataset.category;
+                fetchDrivingNews(category);
+            });
+        });
+
+        // News API Integration
+        let currentPage = 1;
+        let currentCategory = 'all';
+        
+        async function fetchDrivingNews(category = 'all', page = 1) {
+            const newsGrid = document.getElementById('news-grid');
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            
+            try {
+                if (page === 1) {
+                    // Show loading state for first page
+                    newsGrid.innerHTML = `
+                        <div class="col-span-full text-center">
+                            <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-6"></div>
+                            <p class="text-xl text-gray-600">Loading latest news...</p>
+                            <p class="text-gray-500 mt-2">Fetching the most recent automotive updates</p>
+                        </div>
+                    `;
+                }
+
+                // Build query based on category
+                let query = '';
+                if (category === 'all') {
+                    query = '("driving test" OR "DVSA" OR "electric vehicle" OR "car review" OR "highway code")';
+                } else if (category === 'driving-test') {
+                    query = '"driving test"';
+                } else if (category === 'dvsa') {
+                    query = 'DVSA';
+                } else if (category === 'electric-vehicle') {
+                    query = '"electric vehicle" OR "EV" OR "electric car"';
+                } else if (category === 'car-review') {
+                    query = '"car review" OR "vehicle review"';
+                } else if (category === 'highway-code') {
+                    query = '"highway code" OR "road rules"';
+                }
+
+                // Make API request to NewsAPI
+                const response = await fetch(`https://newsapi.org/v2/everything?q=${query}&language=en&sortBy=publishedAt&pageSize=9&page=${page}&apiKey=YOUR_NEWS_API_KEY`);
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch news');
+                }
+
+                const data = await response.json();
+                
+                if (data.articles && data.articles.length > 0) {
+                    // Clear loading state and render news
+                    if (page === 1) {
+                        newsGrid.innerHTML = '';
+                    }
+                    
+                    data.articles.forEach(article => {
+                        const newsCard = document.createElement('div');
+                        newsCard.className = 'bg-white rounded-lg shadow-md news-card overflow-hidden';
+                        
+                        const imageUrl = article.urlToImage || 'https://placehold.co/400x300/3b82f6/ffffff?text=DriveEver+News';
+                        const publishedDate = new Date(article.publishedAt).toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'short',
+                            year: 'numeric'
+                        });
+                        
+                        newsCard.innerHTML = `
+                            <img src="${imageUrl}" alt="${article.title}" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-sm text-gray-500">${article.source.name || 'DriveEver News'}</span>
+                                    <span class="text-sm text-gray-400">${publishedDate}</span>
+                                </div>
+                                <h3 class="font-bold text-gray-900 mb-3 line-clamp-2 text-lg">${article.title}</h3>
+                                <p class="text-gray-600 mb-4 line-clamp-3">${article.description || 'No description available.'}</p>
+                                <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                                    Read Full Article
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        `;
+                        
+                        newsGrid.appendChild(newsCard);
+                    });
+
+                    // Show/hide load more button
+                    if (data.articles.length === 9) {
+                        loadMoreBtn.classList.remove('hidden');
+                    } else {
+                        loadMoreBtn.classList.add('hidden');
+                    }
+                } else {
+                    throw new Error('No articles found');
+                }
+                
+            } catch (error) {
+                console.error('Error fetching news:', error);
+                newsGrid.innerHTML = `
+                    <div class="col-span-full text-center">
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-6 py-8 rounded-lg">
+                            <svg class="w-16 h-16 mx-auto mb-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                            </svg>
+                            <p class="font-bold text-xl mb-2">Unable to load news</p>
+                            <p class="text-sm">Please check your connection and try again later.</p>
+                            <button onclick="fetchDrivingNews(currentCategory, 1)" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                Try Again
+                            </button>
+                        </div>
+                    </div>
+                `;
+                loadMoreBtn.classList.add('hidden');
+            }
+        }
+
+        // Load More Button
+        document.getElementById('load-more-btn').addEventListener('click', () => {
+            currentPage++;
+            fetchDrivingNews(currentCategory, currentPage);
+        });
+
+        // Fetch news when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchDrivingNews();
+        });
+    </script>
+</body>
+</html>
+

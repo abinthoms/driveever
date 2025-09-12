@@ -1,0 +1,19 @@
+{
+  "name": "driveever-architecture-demo",
+  "version": "1.0.0",
+  "description": "Architecture demonstration for DriveEver Microservices",
+  "main": "run-demo.ts",
+  "scripts": {
+    "demo": "ts-node run-demo.ts",
+    "demo:repository": "ts-node repository-pattern-demo.ts",
+    "demo:integration": "ts-node service-integration-demo.ts"
+  },
+  "dependencies": {
+    "typescript": "^5.1.3",
+    "ts-node": "^10.9.1"
+  }
+}
+
+
+
+

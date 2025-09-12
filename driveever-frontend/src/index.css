@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Components */
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors;
+  }
+  
+  /* Primary and Secondary color utilities */
+  .text-primary-600 {
+    @apply text-blue-600;
+  }
+  
+  .text-primary-800 {
+    @apply text-blue-800;
+  }
+  
+  .text-primary-100 {
+    @apply text-blue-100;
+  }
+  
+  .bg-primary-50 {
+    @apply bg-blue-50;
+  }
+  
+  .bg-primary-100 {
+    @apply bg-blue-100;
+  }
+  
+  .bg-primary-600 {
+    @apply bg-blue-600;
+  }
+  
+  .border-primary-500 {
+    @apply border-blue-500;
+  }
+  
+  .text-secondary-50 {
+    @apply text-purple-50;
+  }
+}

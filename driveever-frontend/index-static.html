@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveEver - Your Lifelong Driving Companion</title>
+    <meta name="description" content="DriveEver is your complete driving platform. Find instructors, check vehicles, and stay on the road with our comprehensive driving services.">
+    <meta name="keywords" content="driving instructor, vehicle check, MOT status, driving lessons, UK driving">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .hero-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .cta-button { transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .pricing-card { border: 1px solid #e5e7eb; }
+        .pricing-card.popular { border-color: #3b82f6; border-width: 2px; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-gray-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mr-2">
+                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9L2 12v9a2 2 0 0 0 2 2h10.7a2 2 0 0 0 1.9-1.4L18 19.3a2 2 0 0 0-1-2.3zM7 16H5v-2h2v2zm4 0H9v-2h2v2zm4 0h-2v-2h2v2z"></path>
+                </svg>
+                DriveEver
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#features" class="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
+                <a href="/news/" class="text-gray-600 hover:text-blue-600 transition-colors">TopGear News</a>
+                <a href="/vehicle-check/" class="text-gray-600 hover:text-blue-600 transition-colors">Vehicle Check</a>
+                <a href="/about/" class="text-gray-600 hover:text-blue-600 transition-colors">About Us</a>
+                <a href="/pricing/" class="text-gray-600 hover:text-blue-600 transition-colors">Pricing</a>
+                <a href="/contact/" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                <a href="/auth-demo" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">🔐 Auth Demo</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Login</a>
+                <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-300 cta-button">Register</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2">
+                <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#features" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Features</a>
+            <a href="/news/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">TopGear News</a>
+            <a href="/vehicle-check/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Vehicle Check</a>
+            <a href="/about/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">About Us</a>
+            <a href="/pricing/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Pricing</a>
+            <a href="/contact/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Contact</a>
+            <a href="/auth-demo" class="block text-blue-600 font-semibold hover:text-blue-700 py-2 transition-colors">🔐 Auth Demo</a>
+            <hr class="my-2">
+            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Login</a>
+            <a href="#" class="block bg-blue-600 text-white text-center px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-300 cta-button">Register</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page 1: Home -->
+        <section id="home" class="hero-bg text-white">
+            <div class="container mx-auto px-6 py-24 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">Your Lifelong Driving Companion</h1>
+                <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto mb-8">From your first lesson to managing your tenth car, DriveEver is the only platform you'll ever need. Find instructors, check vehicles, and stay on the road.</p>
+                <div class="mt-8 space-y-4">
+                    <div class="max-w-md mx-auto bg-white p-2 rounded-md shadow-lg flex items-center">
+                        <input type="text" id="postcode-input" placeholder="Enter your postcode..." class="w-full py-2 px-4 text-gray-700 focus:outline-none rounded-l-md">
+                        <button id="search-button" class="bg-blue-600 text-white px-6 py-2 rounded-r-md hover:bg-blue-700 transition-all duration-300 flex-shrink-0">Find an Instructor</button>
+                    </div>
+                    <div id="postcode-message" class="mt-2 text-sm"></div>
+                    
+                    <div class="text-center">
+                        <p class="text-blue-100 mb-3">Or check any vehicle instantly</p>
+                        <a href="/vehicle-check/" class="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-md hover:bg-gray-100 transition-all duration-300 font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Check Vehicle
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 2: Features -->
+        <section id="features" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">A Platform Built For Everyone</h2>
+                    <p class="text-gray-600 mt-2">Whether you're a learner, an instructor, or run a whole academy, we have tools for you.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md feature-card text-center">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4 mx-auto">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">For Learners</h3>
+                        <p class="text-gray-600">Find vetted local instructors, practice for your theory test with our AI Study Planner, and book lessons 24/7.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md feature-card text-center">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-green-100 text-green-600 mb-4 mx-auto">
+                            <i data-lucide="car"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">For Instructors</h3>
+                        <p class="text-gray-600">Fill your diary with our Smart Scheduler, manage bookings effortlessly, and get paid securely. No more admin headaches.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md feature-card text-center">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 text-indigo-600 mb-4 mx-auto">
+                            <i data-lucide="building-2"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">For Academies</h3>
+                        <p class="text-gray-600">A powerful dashboard to manage all your instructors, view team calendars, and track business performance in real-time.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md feature-card text-center">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-purple-100 text-purple-600 mb-4 mx-auto">
+                            <i data-lucide="car"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Vehicle Checks</h3>
+                        <p class="text-gray-600">Get instant, official DVLA reports on any UK vehicle. Check MOT status, tax details, and vehicle history.</p>
+                        <a href="/vehicle-check/" class="inline-block mt-4 text-purple-600 hover:text-purple-700 font-medium">Try Now →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 3: About Us -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Mission: To Simplify Driving for Everyone</h2>
+                        <p class="text-gray-600 mb-4">DriveEver was born in Lincoln from a simple idea: the journey to getting and staying on the road is too complicated. From finding a great instructor to remembering your MOT, the process is fragmented and stressful.</p>
+                        <p class="text-gray-600">We're building a single, trusted platform to change that. By connecting learners, instructors, and car owners with smart, easy-to-use tools, we're making driving safer, simpler, and more enjoyable for everyone in the UK.</p>
+                        <div class="mt-6">
+                            <a href="/about/" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+                                Learn More About Us
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=DriveEver+Team" alt="DriveEver Team" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 4: Pricing -->
+        <section id="pricing" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Simple, Transparent Pricing</h2>
+                    <p class="text-gray-600 mt-2">Choose the plan that's right for you. No hidden fees, ever.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <!-- Learner Plan -->
+                    <div class="pricing-card p-8 rounded-lg text-center bg-white">
+                        <h3 class="text-xl font-bold mb-2">Learner</h3>
+                        <p class="text-gray-500 mb-4">For getting test-ready.</p>
+                        <p class="text-4xl font-extrabold mb-4">£14.99</p>
+                        <p class="text-gray-500 mb-6">One-time payment</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>Full Theory Test Question Bank</li>
+                            <li>AI Study Planner</li>
+                            <li>Unlimited Mock Tests</li>
+                        </ul>
+                        <button class="mt-8 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 cta-button">Get Started</button>
+                    </div>
+                    <!-- Instructor Plan -->
+                    <div class="pricing-card p-8 rounded-lg text-center popular bg-white">
+                        <p class="text-sm font-bold text-blue-600 mb-2">MOST POPULAR</p>
+                        <h3 class="text-xl font-bold mb-2">Instructor</h3>
+                        <p class="text-gray-500 mb-4">For growing your business.</p>
+                        <p class="text-4xl font-extrabold mb-4">5%</p>
+                        <p class="text-gray-500 mb-6">Per booking</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>Booking Management</li>
+                            <li>Smart Scheduler</li>
+                            <li>Secure Payments</li>
+                        </ul>
+                        <button class="mt-8 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 cta-button">Join as Instructor</button>
+                    </div>
+                    <!-- Academy Plan -->
+                    <div class="pricing-card p-8 rounded-lg text-center bg-white">
+                        <h3 class="text-xl font-bold mb-2">Academy</h3>
+                        <p class="text-gray-500 mb-4">For managing your team.</p>
+                        <p class="text-4xl font-extrabold mb-4">Contact Us</p>
+                        <p class="text-gray-500 mb-6">For custom pricing</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>Team Management</li>
+                            <li>Master Calendar</li>
+                            <li>Business Analytics</li>
+                        </ul>
+                        <a href="/contact/" class="mt-8 w-full bg-gray-200 text-gray-800 py-2 rounded-md hover:bg-gray-300 cta-button block">Contact Sales</a>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="/pricing/" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+                        View Detailed Pricing
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 5: Contact -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Get In Touch</h2>
+                <p class="text-gray-600 mt-2 mb-8 max-w-xl mx-auto">Have a question or want to partner with us? We'd love to hear from you.</p>
+                <div class="space-y-4">
+                    <a href="mailto:hello@driveever.co.uk" class="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 cta-button text-lg inline-block">
+                        Contact Us
+                    </a>
+                    <div>
+                        <a href="/contact/" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+                            More Contact Options
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">DriveEver</h3>
+                    <p class="text-gray-400">Your lifelong driving companion, making the road simpler and safer for everyone.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="/news/" class="text-blue-400 font-medium">TopGear News</a></li>
+                        <li><a href="/vehicle-check/" class="text-gray-400 hover:text-white transition-colors">Vehicle Check</a></li>
+                        <li><a href="/register" class="text-gray-400 hover:text-white transition-colors">Become an Instructor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://twitter.com/driveever" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="twitter"></i></a>
+                        <a href="https://facebook.com/driveever" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="facebook"></i></a>
+                        <a href="https://instagram.com/driveever" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 DriveEver Ltd. All rights reserved. Built in Lincoln, UK.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Postcode Validation Logic
+        const searchButton = document.getElementById('search-button');
+        const postcode_input = document.getElementById('postcode-input');
+        const postcodeMessage = document.getElementById('postcode-message');
+
+        searchButton.addEventListener('click', async () => {
+            const postcode = postcode_input.value.trim();
+            if (!postcode) {
+                postcodeMessage.textContent = 'Please enter a postcode.';
+                postcodeMessage.style.color = 'red';
+                return;
+            }
+
+            postcodeMessage.textContent = 'Validating...';
+            postcodeMessage.style.color = 'gray';
+
+            try {
+                const response = await fetch(`https://api.postcodes.io/postcodes/${postcode}/validate`);
+                const data = await response.json();
+
+                if (data.result) {
+                    postcodeMessage.textContent = 'Postcode is valid!';
+                    postcodeMessage.style.color = 'green';
+                    // Here you would redirect to the search results page
+                    // For example: window.location.href = `/search?postcode=${postcode}`;
+                    console.log(`Searching for instructors in ${postcode}`);
+                } else {
+                    postcodeMessage.textContent = 'Invalid UK postcode. Please try again.';
+                    postcodeMessage.style.color = 'red';
+                }
+            } catch (error) {
+                postcodeMessage.textContent = 'Could not validate postcode. Please check your connection.';
+                postcodeMessage.style.color = 'red';
+                console.error('Error validating postcode:', error);
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

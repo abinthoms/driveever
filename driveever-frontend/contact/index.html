@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DriveEver | Get in Touch</title>
+    <meta name="description" content="Get in touch with the DriveEver team. We're here to help with any questions about our driving platform, services, or partnerships.">
+    <meta name="keywords" content="contact DriveEver, driving platform support, partnership inquiries, customer service">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .contact-card { transition: all 0.3s ease; }
+        .contact-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .form-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-gray-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mr-2">
+                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9L2 12v9a2 2 0 0 0 2 2h10.7a2 2 0 0 0 1.9-1.4L18 19.3a2 2 0 0 0-1-2.3zM7 16H5v-2h2v2zm4 0H9v-2h2v2zm4 0h-2v-2h2v2z"></path>
+                </svg>
+                DriveEver
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="/#features" class="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
+                <a href="/news/" class="text-gray-600 hover:text-blue-600 transition-colors">TopGear News</a>
+                <a href="/vehicle-check/" class="text-gray-600 hover:text-blue-600 transition-colors">Vehicle Check</a>
+                <a href="/about/" class="text-gray-600 hover:text-blue-600 transition-colors">About Us</a>
+                <a href="/pricing/" class="text-gray-600 hover:text-blue-600 transition-colors">Pricing</a>
+                <a href="/contact/" class="text-blue-600 font-semibold">Contact</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Login</a>
+                <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-300">Register</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2">
+                <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="/#features" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Features</a>
+            <a href="/news/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">TopGear News</a>
+            <a href="/vehicle-check/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Vehicle Check</a>
+            <a href="/about/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">About Us</a>
+            <a href="/pricing/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Pricing</a>
+            <a href="/contact/" class="block text-blue-600 font-semibold py-2">Contact</a>
+            <hr class="my-2">
+            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Login</a>
+            <a href="#" class="block bg-blue-600 text-white text-center px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-300">Register</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">Get In Touch</h1>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto">Have a question or want to partner with us? We'd love to hear from you.</p>
+            </div>
+        </section>
+
+        <!-- Contact Methods -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-white p-8 rounded-lg shadow-md contact-card text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-6 mx-auto">
+                            <i data-lucide="mail" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Email Us</h3>
+                        <p class="text-gray-600 mb-4">Send us a message and we'll get back to you within 24 hours.</p>
+                        <a href="mailto:hello@driveever.co.uk" class="text-blue-600 hover:text-blue-700 font-medium">
+                            hello@driveever.co.uk
+                        </a>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md contact-card text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 text-green-600 mb-6 mx-auto">
+                            <i data-lucide="phone" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Call Us</h3>
+                        <p class="text-gray-600 mb-4">Speak directly with our team during business hours.</p>
+                        <a href="tel:+441523123456" class="text-blue-600 hover:text-blue-700 font-medium">
+                            +44 (0) 1523 123 456
+                        </a>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md contact-card text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 text-purple-600 mb-6 mx-auto">
+                            <i data-lucide="map-pin" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Visit Us</h3>
+                        <p class="text-gray-600 mb-4">Our office is located in the heart of Lincoln.</p>
+                        <p class="text-blue-600 font-medium">
+                            Lincoln, Lincolnshire<br>United Kingdom
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl font-bold mb-4">Send us a Message</h2>
+                            <p class="text-gray-600">Fill out the form below and we'll get back to you as soon as possible.</p>
+                        </div>
+                        
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                    <input type="text" id="first-name" name="first-name" required class="w-full px-4 py-3 border border-gray-300 rounded-md form-input focus:outline-none">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                    <input type="text" id="last-name" name="last-name" required class="w-full px-4 py-3 border border-gray-300 rounded-md form-input focus:outline-none">
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-md form-input focus:outline-none">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-md form-input focus:outline-none">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                                <select id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-md form-input focus:outline-none">
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-md form-input focus:outline-none resize-none"></textarea>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <label for="newsletter" class="ml-2 block text-sm text-gray-700">
+                                    Subscribe to our newsletter for updates and news
+                                </label>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-all duration-300 text-lg font-medium">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Office Hours -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-8">Office Hours</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-4">Monday - Friday</h3>
+                            <p class="text-gray-600">9:00 AM - 6:00 PM GMT</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-4">Saturday</h3>
+                            <p class="text-gray-600">10:00 AM - 4:00 PM GMT</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-6">We're closed on Sundays and UK Bank Holidays</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Quick answers to common questions</p>
+                </div>
+                
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold mb-3">How quickly do you respond to inquiries?</h3>
+                        <p class="text-gray-600">We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.</p>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold mb-3">Can I schedule a demo of your platform?</h3>
+                        <p class="text-gray-600">Absolutely! We'd be happy to show you around our platform. Just let us know what you're interested in and we'll arrange a personalized demo.</p>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold mb-3">Do you offer support for international users?</h3>
+                        <p class="text-gray-600">Yes, we provide support for users worldwide. Our platform is designed to work with UK driving regulations, but we're happy to help international users understand how it can benefit them.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">DriveEver</h3>
+                    <p class="text-gray-400">Your lifelong driving companion, making the road simpler and safer for everyone.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about/" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="/news/" class="text-gray-400 hover:text-white transition-colors">TopGear News</a></li>
+                        <li><a href="/vehicle-check/" class="text-gray-400 hover:text-white transition-colors">Vehicle Check</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Become an Instructor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 DriveEver Ltd. All rights reserved. Built in Lincoln, UK.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message (in real app, this would send to server)
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
+

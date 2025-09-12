@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DriveEver | Our Mission to Simplify Driving</title>
+    <meta name="description" content="Learn about DriveEver's mission to simplify driving for everyone. Discover our story, team, and commitment to making the road safer and simpler.">
+    <meta name="keywords" content="about DriveEver, driving platform, driving instructor finder, vehicle check service">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .team-card { transition: all 0.3s ease; }
+        .team-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .value-card { transition: all 0.3s ease; }
+        .value-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-gray-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mr-2">
+                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9L2 12v9a2 2 0 0 0 2 2h10.7a2 2 0 0 0 1.9-1.4L18 19.3a2 2 0 0 0-1-2.3zM7 16H5v-2h2v2zm4 0H9v-2h2v2zm4 0h-2v-2h2v2z"></path>
+                </svg>
+                DriveEver
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="/#features" class="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
+                <a href="/news/" class="text-gray-600 hover:text-blue-600 transition-colors">TopGear News</a>
+                <a href="/vehicle-check/" class="text-gray-600 hover:text-blue-600 transition-colors">Vehicle Check</a>
+                <a href="/about/" class="text-blue-600 font-semibold">About Us</a>
+                <a href="/pricing/" class="text-gray-600 hover:text-blue-600 transition-colors">Pricing</a>
+                <a href="/contact/" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Login</a>
+                <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-300">Register</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2">
+                <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="/#features" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Features</a>
+            <a href="/news/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">TopGear News</a>
+            <a href="/vehicle-check/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Vehicle Check</a>
+            <a href="/about/" class="block text-blue-600 font-semibold py-2">About Us</a>
+            <a href="/pricing/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Pricing</a>
+            <a href="/contact/" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Contact</a>
+            <hr class="my-2">
+            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 transition-colors">Login</a>
+            <a href="#" class="block bg-blue-600 text-white text-center px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-300">Register</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">Our Mission: To Simplify Driving for Everyone</h1>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto">DriveEver was born in Lincoln from a simple idea: the journey to getting and staying on the road is too complicated. We're building a single, trusted platform to change that.</p>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">The DriveEver Story</h2>
+                        <p class="text-gray-600 mb-4 text-lg">It all started with a frustrating experience. Our founder was trying to find a driving instructor for his teenage daughter, and the process was anything but simple.</p>
+                        <p class="text-gray-600 mb-4 text-lg">Multiple websites, different booking systems, no way to verify instructor credentials, and absolutely no transparency about what you're actually getting for your money.</p>
+                        <p class="text-gray-600 mb-4 text-lg">That's when we realized: the driving industry is stuck in the past. While other sectors have embraced technology to make life easier, learning to drive remains a fragmented, stressful experience.</p>
+                        <p class="text-gray-600 text-lg">So we decided to fix it. Not just for learners, but for instructors, academies, and anyone who owns a car. One platform, one experience, one trusted source for everything driving-related.</p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=DriveEver+Story" alt="DriveEver Story" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">These principles guide everything we do, from product development to customer service</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md value-card text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-6 mx-auto">
+                            <i data-lucide="shield-check" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Trust & Safety</h3>
+                        <p class="text-gray-600">Every instructor is vetted, every vehicle check uses official data, and every feature is built with your safety in mind.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md value-card text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 text-green-600 mb-6 mx-auto">
+                            <i data-lucide="zap" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Simplicity</h3>
+                        <p class="text-gray-600">Complex problems deserve simple solutions. We believe the best technology is invisible - it just works.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md value-card text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 text-purple-600 mb-6 mx-auto">
+                            <i data-lucide="users" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Community</h3>
+                        <p class="text-gray-600">We're building more than a platform - we're building a community of drivers, instructors, and car enthusiasts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Meet the Team</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">The passionate people behind DriveEver, working to make driving simpler for everyone</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md team-card text-center">
+                        <img src="https://placehold.co/200x200/3b82f6/ffffff?text=CEO" alt="CEO" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Sarah Johnson</h3>
+                        <p class="text-blue-600 font-medium mb-3">CEO & Founder</p>
+                        <p class="text-gray-600">Former driving instructor with 15+ years experience. Passionate about using technology to solve real-world problems.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md team-card text-center">
+                        <img src="https://placehold.co/200x200/10b981/ffffff?text=CTO" alt="CTO" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Michael Chen</h3>
+                        <p class="text-blue-600 font-medium mb-3">CTO</p>
+                        <p class="text-gray-600">Tech veteran with experience at major automotive companies. Believes in building products that people actually want to use.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md team-card text-center">
+                        <img src="https://placehold.co/200x200/8b5cf6/ffffff?text=Head+of+Ops" alt="Head of Operations" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                        <h3 class="text-xl font-bold mb-2">Emma Thompson</h3>
+                        <p class="text-blue-600 font-medium mb-3">Head of Operations</p>
+                        <p class="text-gray-600">Former driving test examiner who understands the system inside and out. Ensures our platform meets real user needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-20 bg-blue-600 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">DriveEver by the Numbers</h2>
+                    <p class="text-blue-100 max-w-2xl mx-auto">Our impact on the driving community so far</p>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold mb-2">10,000+</div>
+                        <p class="text-blue-100">Happy Learners</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold mb-2">500+</div>
+                        <p class="text-blue-100">Vetted Instructors</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold mb-2">50,000+</div>
+                        <p class="text-blue-100">Vehicle Checks</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold mb-2">98%</div>
+                        <p class="text-blue-100">Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Join the DriveEver Community?</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Whether you're learning to drive, teaching others, or just want to stay informed, we have a place for you.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/vehicle-check/" class="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-all duration-300 text-lg font-medium">
+                        Try Vehicle Check
+                    </a>
+                    <a href="/contact/" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-md hover:bg-gray-300 transition-all duration-300 text-lg font-medium">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">DriveEver</h3>
+                    <p class="text-gray-400">Your lifelong driving companion, making the road simpler and safer for everyone.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about/" class="text-blue-400 font-medium">About Us</a></li>
+                        <li><a href="/#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="/news/" class="text-gray-400 hover:text-white transition-colors">TopGear News</a></li>
+                        <li><a href="/vehicle-check/" class="text-gray-400 hover:text-white transition-colors">Vehicle Check</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Become an Instructor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 DriveEver Ltd. All rights reserved. Built in Lincoln, UK.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+

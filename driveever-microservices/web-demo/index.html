@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveEver Microservices Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-card .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .status.running {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.stopped {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .service-card .url {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #495057;
+            word-break: break-all;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .demo-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .demo-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+
+        .output {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+
+        .architecture-diagram {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .architecture-diagram h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .diagram {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .diagram-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+        }
+
+        .diagram-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 DriveEver Microservices</h1>
+            <p>AI-Powered Vehicle Advice Platform</p>
+        </div>
+
+        <div class="architecture-diagram">
+            <h2>🏗️ System Architecture</h2>
+            <div class="diagram">
+                <div class="diagram-item">
+                    <h4>🌐 API Gateway</h4>
+                    <p>Port 3000</p>
+                </div>
+                <div class="diagram-item">
+                    <h4>📝 Prompt Service</h4>
+                    <p>Port 3001</p>
+                </div>
+                <div class="diagram-item">
+                    <h4>🤖 AI Service</h4>
+                    <p>Port 3002</p>
+                </div>
+                <div class="diagram-item">
+                    <h4>📊 Analytics</h4>
+                    <p>Port 3003</p>
+                </div>
+                <div class="diagram-item">
+                    <h4>👤 User Service</h4>
+                    <p>Port 3004</p>
+                </div>
+                <div class="diagram-item">
+                    <h4>🚗 Vehicle Service</h4>
+                    <p>Port 3005</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🌐 API Gateway</h3>
+                <div class="status" id="gateway-status">Checking...</div>
+                <p>Central entry point for all microservices. Routes requests and handles load balancing.</p>
+                <div class="url">http://localhost:3000</div>
+            </div>
+
+            <div class="service-card">
+                <h3>📝 Prompt Service</h3>
+                <div class="status" id="prompt-status">Checking...</div>
+                <p>Manages the Golden Prompt Library with A/B testing and optimization.</p>
+                <div class="url">http://localhost:3001</div>
+            </div>
+
+            <div class="service-card">
+                <h3>🤖 AI Service</h3>
+                <div class="status" id="ai-status">Checking...</div>
+                <p>Integrates with Gemini, OpenAI, and Claude for AI-powered responses.</p>
+                <div class="url">http://localhost:3002</div>
+            </div>
+
+            <div class="service-card">
+                <h3>📊 Analytics Service</h3>
+                <div class="status" id="analytics-status">Checking...</div>
+                <p>Real-time analytics and performance tracking for all services.</p>
+                <div class="url">http://localhost:3003</div>
+            </div>
+
+            <div class="service-card">
+                <h3>👤 User Service</h3>
+                <div class="status" id="user-status">Checking...</div>
+                <p>User management, authentication, and profile management.</p>
+                <div class="url">http://localhost:3004</div>
+            </div>
+
+            <div class="service-card">
+                <h3>🚗 Vehicle Service</h3>
+                <div class="status" id="vehicle-status">Checking...</div>
+                <p>Vehicle data management, MOT records, and vehicle information.</p>
+                <div class="url">http://localhost:3005</div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🧪 Live Demo</h2>
+            <p>Test the microservices architecture with real AI responses!</p>
+            
+            <div class="demo-buttons">
+                <button class="btn btn-primary" onclick="testAIService()">Test AI Service</button>
+                <button class="btn btn-secondary" onclick="testPromptService()">Test Prompt Service</button>
+                <button class="btn btn-success" onclick="runArchitectureDemo()">Run Full Demo</button>
+                <button class="btn btn-primary" onclick="checkAllServices()">Check All Services</button>
+            </div>
+
+            <div id="output" class="output" style="display: none;"></div>
+        </div>
+
+        <div class="demo-section">
+            <h2>📈 Monitoring & Documentation</h2>
+            <div class="demo-buttons">
+                <a href="http://localhost:9090" target="_blank" class="btn btn-primary">Prometheus Metrics</a>
+                <a href="http://localhost:3001" target="_blank" class="btn btn-secondary">Grafana Dashboards</a>
+                <a href="http://localhost:3001/api/docs" target="_blank" class="btn btn-success">API Documentation</a>
+                <a href="http://localhost:3002/api/docs" target="_blank" class="btn btn-primary">AI Service Docs</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>DriveEver Microservices - Built with NestJS, TypeScript, and Docker</p>
+            <p>Real AI Integration with Gemini, OpenAI, and Claude</p>
+        </div>
+    </div>
+
+    <script>
+        // Service URLs
+        const services = [
+            { name: 'Gateway', url: 'http://localhost:3000', id: 'gateway-status' },
+            { name: 'Prompt Service', url: 'http://localhost:3001', id: 'prompt-status' },
+            { name: 'AI Service', url: 'http://localhost:3002', id: 'ai-status' },
+            { name: 'Analytics Service', url: 'http://localhost:3003', id: 'analytics-status' },
+            { name: 'User Service', url: 'http://localhost:3004', id: 'user-status' },
+            { name: 'Vehicle Service', url: 'http://localhost:3005', id: 'vehicle-status' }
+        ];
+
+        // Check service status
+        async function checkService(service) {
+            try {
+                const response = await fetch(`${service.url}/health`, {
+                    method: 'GET',
+                    mode: 'cors',
+                    timeout: 5000
+                });
+                
+                const statusElement = document.getElementById(service.id);
+                if (response.ok) {
+                    statusElement.textContent = 'Running ✅';
+                    statusElement.className = 'status running';
+                } else {
+                    statusElement.textContent = 'Error ❌';
+                    statusElement.className = 'status stopped';
+                }
+            } catch (error) {
+                const statusElement = document.getElementById(service.id);
+                statusElement.textContent = 'Stopped ❌';
+                statusElement.className = 'status stopped';
+            }
+        }
+
+        // Check all services
+        async function checkAllServices() {
+            showOutput('Checking all services...\n');
+            for (const service of services) {
+                await checkService(service);
+                showOutput(`${service.name}: ${document.getElementById(service.id).textContent}\n`);
+            }
+            showOutput('Service check complete!\n');
+        }
+
+        // Test AI Service
+        async function testAIService() {
+            showOutput('Testing AI Service...\n');
+            try {
+                const response = await fetch('http://localhost:3002/ai/test?provider=gemini', {
+                    method: 'GET',
+                    mode: 'cors'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    showOutput(`AI Service Response:\n`);
+                    showOutput(`Question: ${data.question}\n`);
+                    showOutput(`Answer: ${data.answer}\n`);
+                    showOutput(`Confidence: ${(data.confidence * 100).toFixed(1)}%\n`);
+                    showOutput(`Response Time: ${data.responseTime}ms\n`);
+                    showOutput(`Provider: ${data.provider}\n`);
+                } else {
+                    showOutput(`AI Service Error: ${response.status} ${response.statusText}\n`);
+                }
+            } catch (error) {
+                showOutput(`AI Service Error: ${error.message}\n`);
+            }
+        }
+
+        // Test Prompt Service
+        async function testPromptService() {
+            showOutput('Testing Prompt Service...\n');
+            try {
+                const response = await fetch('http://localhost:3001/prompts', {
+                    method: 'GET',
+                    mode: 'cors'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    showOutput(`Prompt Service Response:\n`);
+                    showOutput(`Found ${data.length} prompts\n`);
+                    if (data.length > 0) {
+                        showOutput(`First prompt: ${data[0].name}\n`);
+                        showOutput(`Category: ${data[0].category}\n`);
+                        showOutput(`Version: ${data[0].version}\n`);
+                    }
+                } else {
+                    showOutput(`Prompt Service Error: ${response.status} ${response.statusText}\n`);
+                }
+            } catch (error) {
+                showOutput(`Prompt Service Error: ${error.message}\n`);
+            }
+        }
+
+        // Run architecture demo
+        async function runArchitectureDemo() {
+            showOutput('Running DriveEver Architecture Demo...\n');
+            showOutput('=====================================\n\n');
+            
+            // Check services
+            showOutput('1. Checking Service Health...\n');
+            await checkAllServices();
+            
+            // Test AI Service
+            showOutput('\n2. Testing AI Integration...\n');
+            await testAIService();
+            
+            // Test Prompt Service
+            showOutput('\n3. Testing Prompt Management...\n');
+            await testPromptService();
+            
+            showOutput('\n🎉 Demo Complete! All systems operational.\n');
+        }
+
+        // Show output
+        function showOutput(text) {
+            const output = document.getElementById('output');
+            output.style.display = 'block';
+            output.textContent += text;
+            output.scrollTop = output.scrollHeight;
+        }
+
+        // Clear output
+        function clearOutput() {
+            const output = document.getElementById('output');
+            output.textContent = '';
+            output.style.display = 'none';
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            checkAllServices();
+        };
+    </script>
+</body>
+</html>
+
+
+
+

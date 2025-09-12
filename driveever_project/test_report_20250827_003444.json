@@ -1,0 +1,128 @@
+{
+  "test_run": {
+    "timestamp": "2025-08-27T00:34:44.434746",
+    "total_tests": 19,
+    "summary": {
+      "passed": 12,
+      "failed": 4,
+      "skipped": 3,
+      "warnings": 0
+    }
+  },
+  "test_results": [
+    {
+      "test": "Backend Server Health",
+      "status": "PASS",
+      "details": "Django admin accessible",
+      "timestamp": "2025-08-27T00:34:39.203548"
+    },
+    {
+      "test": "Database Connection",
+      "status": "PASS",
+      "details": "Database accessible via admin",
+      "timestamp": "2025-08-27T00:34:39.213350"
+    },
+    {
+      "test": "Database Models",
+      "status": "FAIL",
+      "details": "Some models not accessible",
+      "timestamp": "2025-08-27T00:34:39.222556"
+    },
+    {
+      "test": "User Registration",
+      "status": "FAIL",
+      "details": "Status: 401, Response: {\"detail\":\"Authentication credentials were not provided.\"}",
+      "timestamp": "2025-08-27T00:34:39.228639"
+    },
+    {
+      "test": "User Login",
+      "status": "PASS",
+      "details": "Authentication token received",
+      "timestamp": "2025-08-27T00:34:40.276524"
+    },
+    {
+      "test": "My Bookings Endpoint",
+      "status": "PASS",
+      "details": "Authenticated access successful",
+      "timestamp": "2025-08-27T00:34:40.321919"
+    },
+    {
+      "test": "Instructor Search",
+      "status": "FAIL",
+      "details": "Status: 401",
+      "timestamp": "2025-08-27T00:34:40.325492"
+    },
+    {
+      "test": "Availability Check",
+      "status": "SKIP",
+      "details": "Could not fetch instructors",
+      "timestamp": "2025-08-27T00:34:40.329537"
+    },
+    {
+      "test": "Booking Creation",
+      "status": "SKIP",
+      "details": "Could not fetch instructors",
+      "timestamp": "2025-08-27T00:34:40.332639"
+    },
+    {
+      "test": "API Endpoint: /api/users/login/",
+      "status": "PASS",
+      "details": "Status: 405",
+      "timestamp": "2025-08-27T00:34:40.335518"
+    },
+    {
+      "test": "API Endpoint: /api/users/register/",
+      "status": "PASS",
+      "details": "Status: 401",
+      "timestamp": "2025-08-27T00:34:40.338305"
+    },
+    {
+      "test": "API Endpoint: /api/users/instructors/",
+      "status": "PASS",
+      "details": "Status: 401",
+      "timestamp": "2025-08-27T00:34:40.340774"
+    },
+    {
+      "test": "API Endpoint: /api/users/booking/my-bookings/",
+      "status": "PASS",
+      "details": "Status: 401",
+      "timestamp": "2025-08-27T00:34:40.345665"
+    },
+    {
+      "test": "API Endpoint: /api/users/booking/availability/",
+      "status": "PASS",
+      "details": "Status: 401",
+      "timestamp": "2025-08-27T00:34:40.348619"
+    },
+    {
+      "test": "Frontend Connectivity",
+      "status": "FAIL",
+      "details": "Error: HTTPConnectionPool(host='localhost', port=5173): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001979A06E850>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))",
+      "timestamp": "2025-08-27T00:34:44.415020"
+    },
+    {
+      "test": "CORS Configuration",
+      "status": "PASS",
+      "details": "CORS preflight successful",
+      "timestamp": "2025-08-27T00:34:44.418496"
+    },
+    {
+      "test": "Error Handling",
+      "status": "PASS",
+      "details": "404 error handled correctly",
+      "timestamp": "2025-08-27T00:34:44.424357"
+    },
+    {
+      "test": "Response Formats",
+      "status": "SKIP",
+      "details": "Endpoint returned 401",
+      "timestamp": "2025-08-27T00:34:44.429941"
+    },
+    {
+      "test": "Performance",
+      "status": "PASS",
+      "details": "Response time: 0.003s",
+      "timestamp": "2025-08-27T00:34:44.433178"
+    }
+  ]
+}

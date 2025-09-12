@@ -1,0 +1,716 @@
+/* 🏠 DriveEver Modern Design System - Logo-Inspired Colors (No Gradients) */
+
+/* ===== GOOGLE FONTS IMPORT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  /* 🎨 Color Palette - Logo-Inspired (Lime Green & Dark Blue) */
+  --primary: #32CD32;           /* Lime Green (from logo) */
+  --primary-dark: #228B22;      /* Darker Lime Green */
+  --primary-light: #90EE90;     /* Light Lime Green */
+  --primary-ultra-light: #F0FFF0; /* Ultra Light Lime Green */
+  
+  --secondary: #1E3A8A;         /* Dark Blue (from logo) */
+  --secondary-dark: #1E40AF;    /* Darker Blue */
+  --secondary-light: #3B82F6;   /* Light Blue */
+  
+  --accent: #10B981;            /* Emerald Green */
+  --accent-dark: #059669;       /* Dark Emerald */
+  
+  /* 🌈 Neutral Colors - Logo-Inspired */
+  --white: #FFFFFF;
+  --black: #0F172A;             /* Very Dark Blue */
+  --gray-50: #F8FAFC;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-500: #64748B;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1E293B;
+  --gray-900: #0F172A;
+  
+  /* 🚨 Status Colors - Logo-Inspired */
+  --success: #32CD32;           /* Lime Green */
+  --warning: #FFB400;           /* Gold */
+  --error: #DC2626;             /* Red */
+  --info: #1E3A8A;              /* Dark Blue */
+  
+  /* 🎨 Icon Colors - Logo Colors */
+  --icon-primary: #32CD32;      /* Lime Green for Icons */
+  --icon-secondary: #1E3A8A;    /* Dark Blue for Icons */
+  --icon-accent: #10B981;       /* Emerald for Icons */
+  
+  /* 📱 Typography Scale */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* 📏 Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+  --space-5xl: 96px;
+  
+  /* 🎯 Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+  
+  /* 🌟 Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-lime: 0 0 0 1px rgba(50, 205, 50, 0.1), 0 4px 6px -1px rgba(50, 205, 50, 0.1);
+  
+  /* 🚀 Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===== GLOBAL RESET & BASE STYLES ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  color: var(--black);
+  background-color: var(--white);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ===== TYPOGRAPHY SYSTEM ===== */
+.driveever-text {
+  font-family: var(--font-family-primary);
+}
+
+/* Headings */
+.driveever-h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--black);
+}
+
+.driveever-h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--black);
+}
+
+.driveever-h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+.driveever-h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.driveever-h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.driveever-h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+/* Body Text */
+.driveever-body-large {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--gray-600);
+}
+
+.driveever-body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--gray-600);
+}
+
+.driveever-body-small {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-500);
+}
+
+.driveever-caption {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===== BUTTON SYSTEM ===== */
+.driveever-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-family-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.driveever-btn:focus {
+  outline: none;
+  box-shadow: var(--shadow-lime);
+}
+
+.driveever-btn:active {
+  transform: translateY(1px);
+}
+
+/* Primary Button */
+.driveever-btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.driveever-btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Secondary Button */
+.driveever-btn-secondary {
+  background-color: var(--white);
+  color: var(--black);
+  border: 2px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.driveever-btn-secondary:hover {
+  background-color: var(--gray-50);
+  border-color: var(--gray-300);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Ghost Button */
+.driveever-btn-ghost {
+  background-color: transparent;
+  color: var(--black);
+  border: 2px solid transparent;
+}
+
+.driveever-btn-ghost:hover {
+  background-color: var(--gray-50);
+  border-color: var(--gray-200);
+}
+
+/* Button Sizes */
+.driveever-btn-sm {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 0.875rem;
+}
+
+.driveever-btn-lg {
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: 1.125rem;
+}
+
+.driveever-btn-xl {
+  padding: var(--space-xl) var(--space-3xl);
+  font-size: 1.25rem;
+}
+
+/* ===== CARD SYSTEM ===== */
+.driveever-card {
+  background-color: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+  border: 1px solid var(--gray-100);
+}
+
+.driveever-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.driveever-card-header {
+  padding: var(--space-xl);
+  border-bottom: 1px solid var(--gray-100);
+  background-color: var(--gray-50);
+}
+
+.driveever-card-body {
+  padding: var(--space-xl);
+}
+
+.driveever-card-footer {
+  padding: var(--space-xl);
+  border-top: 1px solid var(--gray-100);
+  background-color: var(--gray-50);
+}
+
+/* ===== INPUT SYSTEM ===== */
+.driveever-input {
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-family-primary);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--black);
+  background-color: var(--white);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.driveever-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lime);
+  background-color: var(--white);
+}
+
+.driveever-input:hover {
+  border-color: var(--gray-300);
+  box-shadow: var(--shadow-md);
+}
+
+.driveever-input::placeholder {
+  color: var(--gray-400);
+  font-weight: 400;
+}
+
+/* ===== BADGE SYSTEM ===== */
+.driveever-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  font-family: var(--font-family-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--white);
+  background-color: var(--gray-500);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.driveever-badge-primary {
+  background-color: var(--primary);
+}
+
+.driveever-badge-secondary {
+  background-color: var(--secondary);
+}
+
+.driveever-badge-success {
+  background-color: var(--success);
+}
+
+.driveever-badge-warning {
+  background-color: var(--warning);
+  color: var(--white);
+}
+
+.driveever-badge-error {
+  background-color: var(--error);
+}
+
+/* ===== ICON SYSTEM ===== */
+.driveever-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
+
+.driveever-icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.driveever-icon-md {
+  width: 20px;
+  height: 20px;
+}
+
+.driveever-icon-lg {
+  width: 24px;
+  height: 24px;
+}
+
+.driveever-icon-xl {
+  width: 32px;
+  height: 32px;
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+.driveever-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.driveever-container-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.driveever-grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.driveever-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.driveever-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.driveever-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .driveever-container {
+    padding: 0 var(--space-lg);
+  }
+  
+  .driveever-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .driveever-grid-2,
+  .driveever-grid-3,
+  .driveever-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .driveever-container {
+    padding: 0 var(--space-md);
+  }
+  
+  .driveever-h1 {
+    font-size: 2.5rem;
+  }
+  
+  .driveever-h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .driveever-h1 {
+    font-size: 2rem;
+  }
+  
+  .driveever-h2 {
+    font-size: 1.75rem;
+  }
+  
+  .driveever-btn {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes driveever-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes driveever-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes driveever-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.driveever-fade-in {
+  animation: driveever-fade-in var(--transition-normal) ease-out;
+}
+
+.driveever-slide-in {
+  animation: driveever-slide-in var(--transition-normal) ease-out;
+}
+
+.driveever-scale-in {
+  animation: driveever-scale-in var(--transition-normal) ease-out;
+}
+
+/* ===== HERO SECTION STYLES ===== */
+.driveever-hero {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: var(--space-5xl) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.driveever-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.driveever-hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: var(--space-lg);
+  letter-spacing: -0.04em;
+  position: relative;
+  z-index: 1;
+}
+
+.driveever-hero-subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  margin-bottom: var(--space-3xl);
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== FEATURE GRID STYLES ===== */
+.driveever-features {
+  padding: var(--space-5xl) 0;
+  background-color: var(--gray-50);
+}
+
+.driveever-feature-card {
+  text-align: center;
+  padding: var(--space-3xl);
+  background: var(--white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  border: 1px solid var(--gray-100);
+}
+
+.driveever-feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-2xl);
+  border-color: var(--primary);
+}
+
+.driveever-feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-xl);
+  background-color: var(--icon-primary);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== NAVIGATION STYLES ===== */
+.driveever-nav {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--gray-100);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.driveever-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.driveever-nav-logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.driveever-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.driveever-nav-link {
+  color: var(--gray-600);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+.driveever-nav-link:hover {
+  color: var(--primary);
+  background-color: var(--primary-ultra-light);
+}
+
+/* ===== FOOTER STYLES ===== */
+.driveever-footer {
+  background-color: var(--gray-900);
+  color: var(--white);
+  padding: var(--space-5xl) 0 var(--space-3xl);
+}
+
+.driveever-footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.driveever-footer-section h3 {
+  color: var(--white);
+  margin-bottom: var(--space-lg);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.driveever-footer-section a {
+  color: var(--gray-300);
+  text-decoration: none;
+  display: block;
+  margin-bottom: var(--space-sm);
+  transition: color var(--transition-normal);
+  font-weight: 400;
+}
+
+.driveever-footer-section a:hover {
+  color: var(--white);
+}
+
+.driveever-footer-bottom {
+  border-top: 1px solid var(--gray-700);
+  padding-top: var(--space-xl);
+  text-align: center;
+  color: var(--gray-400);
+}
+
+/* ===== SPECIAL EFFECTS ===== */
+.driveever-gradient-text {
+  color: var(--primary);
+}
+
+.driveever-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.driveever-glow {
+  box-shadow: 0 0 20px rgba(50, 205, 50, 0.3);
+}
+
+.driveever-hover-lift {
+  transition: transform var(--transition-bounce);
+}
+
+.driveever-hover-lift:hover {
+  transform: translateY(-8px);
+}

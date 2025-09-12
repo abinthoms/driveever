@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../CommitsApp"
+		},
+		{
+			"path": "../commits-frontend"
+		},
+		{
+			"path": "../commits-project"
+		}
+	],
+	"settings": {}
+}

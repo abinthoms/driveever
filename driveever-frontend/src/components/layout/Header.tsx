@@ -56,6 +56,7 @@ const Header = () => {
               <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <Link to="/vehicle-check" className="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">Vehicle History Check</Link>
                 <Link to="/top-gear" className="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">Top Gear Blog</Link>
+                <Link to="/driving-schools" className="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">Find Driving Schools</Link>
                 <Link to="/learner-dashboard" className="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">Learner Dashboard</Link>
                 <Link to="/dashboard" className="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">Main Dashboard</Link>
               </div>
@@ -85,6 +86,7 @@ const Header = () => {
                 <Link to="/signup" className="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">Create Account</Link>
                 <Link to="/dashboard" className="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">Main Dashboard</Link>
                 <Link to="/learner-dashboard" className="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">Learner Dashboard</Link>
+                <Link to="/driving-school-dashboard" className="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">School Dashboard</Link>
               </div>
             </div>
 
@@ -133,8 +135,14 @@ const Header = () => {
                 <div className="text-sm font-semibold text-gray-900 mb-2">Services</div>
                 <Link to="/vehicle-check" className="block text-gray-600 hover:text-gray-900 font-medium py-2 pl-4">Vehicle History Check</Link>
                 <Link to="/top-gear" className="block text-gray-600 hover:text-gray-900 font-medium py-2 pl-4">Top Gear Blog</Link>
+                <Link to="/driving-schools" className="block text-gray-600 hover:text-gray-900 font-medium py-2 pl-4">Find Driving Schools</Link>
                 <Link to="/learner-dashboard" className="block text-gray-600 hover:text-gray-900 font-medium py-2 pl-4">Learner Dashboard</Link>
                 <Link to="/dashboard" className="block text-gray-600 hover:text-gray-900 font-medium py-2 pl-4">Main Dashboard</Link>
+              </div>
+
+              <div className="space-y-2">
+                <div className="text-sm font-semibold text-gray-900 mb-2">Account</div>
+                <Link to="/driving-school-dashboard" className="block text-gray-600 hover:text-gray-900 font-medium py-2 pl-4">School Dashboard</Link>
               </div>
 
               <Link to="/about" className="block text-gray-600 hover:text-gray-900 font-medium py-2">About</Link>

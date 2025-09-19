@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Car, Users, GraduationCap, ArrowRight, User, Settings, CreditCard, BookOpen, Star, Clock, Shield, Award } from 'lucide-react';
+import { Car, Users, GraduationCap, ArrowRight, User, Settings, CreditCard, BookOpen, Star, Clock, Shield, Award, Building2, Globe, DollarSign } from 'lucide-react';
 
 const Dashboard = () => {
   const [selectedRole, setSelectedRole] = useState<string | null>(null);
@@ -25,7 +25,7 @@ const Dashboard = () => {
           </div>
 
           {/* Role Selection Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Learner Card */}
             <div 
               onClick={() => handleRoleSelection('learner')}
@@ -61,6 +61,26 @@ const Dashboard = () => {
                 </p>
                 <div className="flex items-center justify-center text-green-600 font-semibold group-hover:text-green-700">
                   <span>Start Teaching</span>
+                  <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
+
+            {/* Driving School Card */}
+            <div 
+              onClick={() => handleRoleSelection('school')}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-purple-500 group"
+            >
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Building2 className="h-10 w-10 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">I'm a Driving School</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Manage your instructors, showcase your school, and grow your business with our comprehensive platform.
+                </p>
+                <div className="flex items-center justify-center text-purple-600 font-semibold group-hover:text-purple-700">
+                  <span>Manage School</span>
                   <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -240,6 +260,123 @@ const Dashboard = () => {
                 <Award className="h-5 w-5" />
                 <span>View Reports</span>
               </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (selectedRole === 'school') {
+      return (
+        <div className="space-y-8">
+          {/* Header */}
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Driving School Dashboard</h1>
+              <p className="text-gray-600 mt-2">Manage your instructors, students, and grow your business</p>
+            </div>
+            <button 
+              onClick={handleBackToSelection}
+              className="text-gray-500 hover:text-gray-700 flex items-center"
+            >
+              <ArrowRight className="h-5 w-5 mr-2 rotate-180" />
+              Back to Role Selection
+            </button>
+          </div>
+
+          {/* Stats Overview */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900">Total Students</h3>
+                <Users className="h-6 w-6 text-blue-600" />
+              </div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">450</div>
+              <div className="text-sm text-gray-500">Active learners</div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900">Instructors</h3>
+                <GraduationCap className="h-6 w-6 text-green-600" />
+              </div>
+              <div className="text-3xl font-bold text-green-600 mb-2">12</div>
+              <div className="text-sm text-gray-500">Qualified instructors</div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900">Pass Rate</h3>
+                <Award className="h-6 w-6 text-purple-600" />
+              </div>
+              <div className="text-3xl font-bold text-purple-600 mb-2">87%</div>
+              <div className="text-sm text-gray-500">First-time passes</div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900">Monthly Revenue</h3>
+                <DollarSign className="h-6 w-6 text-yellow-600" />
+              </div>
+              <div className="text-3xl font-bold text-yellow-600 mb-2">£24,500</div>
+              <div className="text-sm text-gray-500">This month</div>
+            </div>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Quick Actions</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <button 
+                onClick={() => window.location.href = '/driving-school-dashboard'}
+                className="bg-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
+              >
+                <Building2 className="h-5 w-5" />
+                <span>School Dashboard</span>
+              </button>
+              <button 
+                onClick={() => window.location.href = '/driving-schools'}
+                className="bg-green-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-green-700 transition-colors flex items-center justify-center space-x-2"
+              >
+                <Globe className="h-5 w-5" />
+                <span>Marketplace</span>
+              </button>
+              <button 
+                onClick={() => window.location.href = '/driving-school-dashboard?tab=commissions'}
+                className="bg-purple-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center space-x-2"
+              >
+                <DollarSign className="h-5 w-5" />
+                <span>Commissions</span>
+              </button>
+              <button 
+                onClick={() => window.location.href = '/driving-school-dashboard?tab=hmrc'}
+                className="bg-orange-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-orange-700 transition-colors flex items-center justify-center space-x-2"
+              >
+                <Shield className="h-5 w-5" />
+                <span>HMRC Compliance</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Commission Information */}
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 shadow-lg">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">DriveEver Commission Structure</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">10%</div>
+                <div className="text-sm text-gray-600">Platform Commission</div>
+                <div className="text-xs text-gray-500 mt-1">On all bookings</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600 mb-2">90%</div>
+                <div className="text-sm text-gray-600">School Earnings</div>
+                <div className="text-xs text-gray-500 mt-1">Your revenue</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-600 mb-2">Monthly</div>
+                <div className="text-sm text-gray-600">Payout Schedule</div>
+                <div className="text-xs text-gray-500 mt-1">Regular payments</div>
+              </div>
             </div>
           </div>
         </div>

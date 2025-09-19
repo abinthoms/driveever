@@ -14,6 +14,8 @@ import InstructorProfile from './pages/InstructorProfile';
 import BookLesson from './pages/BookLesson';
 import BookingConfirmation from './pages/BookingConfirmation';
 import InstructorDashboard from './pages/InstructorDashboard';
+import DrivingSchoolDashboard from './pages/DrivingSchoolDashboard';
+import DrivingSchoolMarketplace from './pages/DrivingSchoolMarketplace';
 import ErrorBoundary from './components/ErrorBoundary';
 
 const App = () => {
@@ -36,6 +38,8 @@ const App = () => {
             <Route path="/book-lesson" element={<BookLesson />} />
             <Route path="/booking-confirmation" element={<BookingConfirmation />} />
             <Route path="/instructor-dashboard" element={<InstructorDashboard />} />
+            <Route path="/driving-school-dashboard" element={<DrivingSchoolDashboard />} />
+            <Route path="/driving-schools" element={<DrivingSchoolMarketplace />} />
             {/* Add more routes here as needed */}
           </Routes>
         </Layout>
